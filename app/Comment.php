@@ -15,4 +15,8 @@ class Comment extends Model
     public function publication(){
         return $this->hasOne('publication');
     }
+
+    public function rating(){
+        return $this->belongsToMany('Comment_rate');
+    }
 }
