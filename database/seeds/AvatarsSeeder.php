@@ -11,7 +11,7 @@ class AvatarsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 15; $i++){
+        for($i = 1; $i <= 15; $i++){
             $avatar = new App\Avatar();
             $avatar->url = URL::to("helios/images/pic" . str_pad($i, 2, '0', STR_PAD_LEFT) . ".jpg");
             $avatar->save();
