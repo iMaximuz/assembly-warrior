@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('helios');
+    return view('landing');
 });
+
+Route::get('/hom', function () {
+    return view('dashboard');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
