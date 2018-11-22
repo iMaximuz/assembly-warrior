@@ -16,7 +16,7 @@
 				<div class="4u 12u(mobile) important(mobile)" id="sidebar">
 					<hr class="first" />
 					<section>
-						<a href="#" class="image profile"><img src="{{URL::to('helios/images/pic07.jpg') }}" alt="" /></a>
+						<a href="#" class="image profile"><img src="{{asset('helios/images/pic07.jpg') }}" alt="" /></a>
 						<header>
 								<h3>Usuario</h3>
 							</header>
