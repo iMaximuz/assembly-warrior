@@ -1767,6 +1767,20 @@
 				margin: 0 auto;
 				width: auto;
 			}
+		
+		.image.profile {
+			display: block;
+			border-radius: 50%;
+			margin: 0 auto 2em auto;
+			width: 200px;
+			height: 200px;
+		}
+			.image.profile img {
+				border-radius: inherit;
+				margin: 0 auto;
+				width: inherit;
+				height: inherit;
+			}
 
 /* List */
 
@@ -3040,3 +3054,17 @@
 					}
 
 	}
+
+
+
+.post-title  {
+	text-align: left !important;
+}
+
+.post-buttons  {
+	
+}
+
+.icon.on {
+	color: #ef8376;
+}

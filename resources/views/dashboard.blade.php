@@ -4,6 +4,10 @@
 	Dashboard
 @endsection
 
+@section('header-title')
+	Home
+@endsection
+
 @section('content')
 	<div class="wrapper style1">
 

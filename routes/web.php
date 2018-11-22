@@ -13,11 +13,25 @@
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('index');
 
-Route::get('/hom', function () {
+Route::get('/home', function () {
     return view('dashboard');
-});
+})->name('home');
+
+Route::get('/explore', function () {
+    return view('explore');
+})->name('explore');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+Route::get('/post', function () {
+    return view('post');
+})->name('post');
+
+//Route::get('/connect', 'HomeController@index')->name('home');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
