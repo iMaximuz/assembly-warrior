@@ -13,7 +13,7 @@ class AvatarsSeeder extends Seeder
     {
         for($i = 1; $i <= 15; $i++){
             $avatar = new App\Avatar();
-            $avatar->url = URL::to("helios/images/pic" . str_pad($i, 2, '0', STR_PAD_LEFT) . ".jpg");
+            $avatar->url = asset("helios/images/pic" . str_pad($i, 2, '0', STR_PAD_LEFT) . ".jpg");
             $avatar->save();
         }
     }

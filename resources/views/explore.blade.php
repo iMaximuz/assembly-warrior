@@ -2,7 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="{{URL::to('css/assembly.css')}}">
+<link rel="stylesheet" href="{{asset('css/assembly.css')}}">
 @endsection
 
 @section('title')
@@ -40,7 +40,7 @@
 				<div class="8u 12u(mobile)" id="content">
 					<div class="row">
 						<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="{{URL::to('helios/images/pic07.jpg') }}" alt="" /></a>
+								<a href="#" class="image featured"><img src="{{asset('helios/images/pic07.jpg') }}" alt="" /></a>
 								<header>
 									<h3><a href="#">Gravida aliquam penatibus</a></h3>
 								</header>
@@ -50,7 +50,7 @@
 								</p>
 							</article>
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="{{URL::to('helios/images/pic08.jpg') }}" alt="" /></a>
+								<a href="#" class="image featured"><img src="{{asset('helios/images/pic08.jpg') }}" alt="" /></a>
 								<header>
 									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
 								</header>
@@ -60,7 +60,7 @@
 								</p>
 							</article>
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="{{URL::to('helios/images/pic09.jpg') }}" alt="" /></a>
+								<a href="#" class="image featured"><img src="{{asset('helios/images/pic09.jpg') }}" alt="" /></a>
 								<header>
 									<h3><a href="#">Magna laoreet et aliquam</a></h3>
 								</header>

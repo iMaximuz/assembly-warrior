@@ -15,7 +15,7 @@ class Avatar extends Model
     // DEFINE RELATIONSHIPS --------------------------------------------------
     // each bear HAS one fish to eat
     public function users() {
-        return $this->hasMany('User'); // this matches the Eloquent model
+        return $this->hasMany('App\User'); // this matches the Eloquent model
     }
 
 }

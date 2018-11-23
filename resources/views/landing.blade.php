@@ -34,8 +34,8 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#">Iniciar Sesión</a></li>
-								<li><a href="#">Registrarse</a></li>
+								<li><a href="/login">Iniciar Sesión</a></li>
+								<li><a href="/register">Registrarse</a></li>
 							</ul>
 						</nav>
 

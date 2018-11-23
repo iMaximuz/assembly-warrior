@@ -2,7 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="{{URL::to('css/assembly.css')}}">
+<link rel="stylesheet" href="{{asset('css/assembly.css')}}">
 @endsection
 
 @section('title')
@@ -21,7 +21,8 @@
 			<header class="post-title">
 				<h2>Video Title</h2>
 			</header>
-			<a href="#" class="image featured"><img src="{{URL::to('helios/images/pic06.jpg')}}" alt="" /></a>
+			<a href="#" class="image featured"><img src="{{asset('helios/images/pic06.jpg')}}" alt="" /></a>
+			@auth				
 			<div class="post-buttons">
 				<a href="#" onclick="return false" class="icon"><i class="material-icons">cloud</i></a>
 				<a href="#" onclick="return false" class="icon on"><i class="material-icons">favorite</i></a>
@@ -29,6 +30,7 @@
 				<a href="#" onclick="return false" class="icon"><i class="material-icons">computer</i></a>
 				<a href="#" onclick="return false" class="icon"><i class="material-icons">traffic</i></a>
 			</div>
+			@endauth
 			<p>
 				Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
 				posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
@@ -41,6 +43,7 @@
 				<header>
 					<h3>Comentarios</h3>
 				</header>
+				@auth
 				<div id="addComment">
 
 					<div class="webflow-style-input" style="width: 70%">
@@ -49,6 +52,7 @@
 					</div>
 					
 				</div>
+				@endauth
 			</section>
 			<section>
 				<comment>
@@ -56,9 +60,9 @@
 						<div class="2u user-card">
 							<header>
 								<div class="profile-picture">
-									<a href="#" class="image profile" style="width:50px; height:50px;"><img src="{{URL::to('helios/images/pic07.jpg') }}" alt="" /></a>
+									<a href="{{route('profile')}}" class="image profile" style="width:50px; height:50px;"><img src="{{asset('helios/images/pic07.jpg') }}" alt="" /></a>
 								</div>
-								<strong>Usuario</strong>
+								<strong><a href="{{route('profile')}}">Usuario</a></strong>
 							</header>
 						</div>
 						<div class="10u comment-content">
@@ -71,10 +75,12 @@
 									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
 								</span>
 							</div>
+							@auth								
 							<div class="post-buttons">
 								<a href="#" onclick="return false" class="icon on"><i class="material-icons">thumb_up</i></a>
 								<a href="#" onclick="return false" class="icon"><i class="material-icons">thumb_down</i></a>
 							</div>
+							@endauth
 						</div>
 					</div>
 				</comment>
@@ -83,7 +89,7 @@
 							<div class="2u user-card">
 								<header>
 									<div class="profile-picture">
-										<a href="#" class="image profile" style="width:50px; height:50px;"><img src="{{URL::to('helios/images/pic07.jpg') }}" alt="" /></a>
+										<a href="#" class="image profile" style="width:50px; height:50px;"><img src="{{asset('helios/images/pic07.jpg') }}" alt="" /></a>
 									</div>
 									<strong>Usuario</strong>
 								</header>
@@ -98,10 +104,12 @@
 										egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
 									</span>
 								</div>
+								@auth								
 								<div class="post-buttons">
 									<a href="#" onclick="return false" class="icon on"><i class="material-icons">thumb_up</i></a>
 									<a href="#" onclick="return false" class="icon"><i class="material-icons">thumb_down</i></a>
 								</div>
+								@endauth
 							</div>
 						</div>
 					</comment>

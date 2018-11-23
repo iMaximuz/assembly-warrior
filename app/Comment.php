@@ -9,14 +9,14 @@ class Comment extends Model
     protected $fillable = ['message'];
 
     public function author(){
-        return $this->hasOne('User');
+        return $this->belongsTo('App\User');
     }
 
     public function publication(){
-        return $this->hasOne('publication');
+        return $this->belongsTo('App\Publication');
     }
 
     public function rating(){
-        return $this->belongsToMany('Comment_rate');
+        return $this->hasMany('App\Comment_rate');
     }
 }

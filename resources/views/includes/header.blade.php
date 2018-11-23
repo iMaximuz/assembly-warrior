@@ -1,4 +1,3 @@
-<!--
 @guest
 <div id="header" style="padding: 1.2em 0 2em 0;">
 @else
@@ -23,41 +22,21 @@
 				<li>
 					<a href="#">Contenido</a>
 					<ul>
-						<li><a href="#">Reciente</a></li>
-						<li><a href="#">Lo mรกs valorado</a></li>
-					</ul>
-				</li>
-				<li><a href="{{ route('search') }}">Buscar</a></li>
-				<li><a href="{{ route('profile') }}">Perfil</a></li>
-				<li><a href="/">Salir</a></li>
-			@endguest
-
-		</ul>
-	</nav>
-
-</div>
--->
-
-<div id="header">
-		<div class="inner">
-			<header>
-				<h1><a href="/" id="logo">@yield('header-title')</a></h1>
-			</header>
-		</div>
-		
-	<nav id="nav">
-		<ul>
-
-				<li><a href="/">Home</a></li>
-				<li>
-					<a href="#">Contenido</a>
-					<ul>
 						<li><a href="{{route('explore')}}">Reciente</a></li>
 						<li><a href="{{route('explore')}}">Lo más valorado</a></li>
 					</ul>
 				</li>
 				<li><a href="{{ route('profile') }}">Perfil</a></li>
-				<li><a href="/">Salir</a></li>
+				<li>
+					<a href="{{ route('logout') }}" onclick="event.preventDefault();
+						document.getElementById('logout-form').submit();">Salir</a>
+
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+						@csrf
+					</form>
+				</li>
+			@endguest
+
 		</ul>
 	</nav>
 

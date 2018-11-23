@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = "users";
+
     /**
      * The attributes that are mass assignable.
      *
@@ -29,6 +31,22 @@ class User extends Authenticatable
     ];
 
     public function avatar() {
-        return $this->hasOne('Avatar');
+        return $this->belongsTo('App\Avatar');
+    }
+
+    public function posts() {
+        return $this->hasMany('App\Publication');
+    }
+
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
+
+    public function save(array $options = array())
+    {
+        if(empty($this->id)) {
+            $this->avatar_id = rand(1, 15);
+        }
+        return parent::save($options);
     }
 }
