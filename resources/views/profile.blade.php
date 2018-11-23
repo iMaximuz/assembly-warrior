@@ -38,25 +38,27 @@
 					</section>
 				</div>
 				<div class="8u 12u(mobile)" id="content">
-					<div class="row">
-						@if($user)
-						@foreach ($user->posts as $post)				
-						$table->integer('user_id');
-						$table->string('message');
-						$table->smallInteger('publication_type');
-						$table->integer('uploaded_file_id');
-						<article class="4u 12u(mobile) special">
-							<a href="#" class="image featured"><img src="{{ App\Avatar::find(rand(1,15))->url }}" alt="" /></a>
-							<header>
-								<h3><a href="#">FALTA TITULO EN EL POST</a></h3>
-							</header>
-							<p>
-								{{ $post->message }}
-							</p>
-						</article>
+					@if($user)
+						@foreach ($user->posts as $post)
+							
+							@if((($loop->iteration - 1) % 3) == 0)
+							<div class="row">
+							@endif
+								<article class="4u 12u(mobile) special">
+									<a href="/post/{{ $post->id }}" class="image featured"><img src="{{ App\Avatar::find(rand(1,15))->url }}" alt="" /></a>
+									<header>
+										<h3><a href="/post/{{ $post->id }}">{{$post->title}}</a></h3>
+									</header>
+									<p>
+										{{ $post->message }}
+									</p>
+								</article>
+							@if(($loop->iteration % 3) == 0)
+								</div>
+							@endif
+
 						@endforeach
-						@endif
-					</div>
+					@endif
 				</div>
 			</div>
 		</div>

@@ -9,14 +9,14 @@ class Publication extends Model
 
     protected $table = "publication";
 
-    protected $fillable = ['message'];
+    protected $fillable = ['title', 'message'];
 
     public function author(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     public function comments(){
-        return $this->belongsToMany('App\Comment');
+        return $this->hasMany('App\Comment');
     }
 
     public function rating(){

@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+
+    protected $table = "comment";
+
     protected $fillable = ['message'];
 
     public function author(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     public function publication(){

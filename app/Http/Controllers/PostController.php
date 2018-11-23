@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Publication;
 
 class PostController extends Controller
 {
@@ -13,8 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
-        return view('post');
+        abort(404, 'Page not found');
     }
 
     /**
@@ -46,7 +46,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('post', [
+            'post' => Publication::find($id)
+        ]);
     }
 
     /**

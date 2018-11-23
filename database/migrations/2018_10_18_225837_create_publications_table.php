@@ -16,7 +16,8 @@ class CreatePublicationsTable extends Migration
         Schema::create('publication', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('message');
+            $table->string('title');
+            $table->string('message', 500);
             $table->smallInteger('publication_type');
             $table->integer('uploaded_file_id');
             $table->timestamps();
